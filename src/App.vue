@@ -14,52 +14,12 @@
             </ul>
           </div>
           <div class="content">
-            <div class="content-item">
+            <div class="content-item" v-for="(e, i) in 6" :key="i">
               <div class="image">이미지</div>
               <div class="information">
                 <p class="head"><span>코딩</span><span>2020.06.02</span></p>
                 <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
-              </div>
-            </div>
-            <div class="content-item">
-              <div class="image">이미지</div>
-              <div class="information">
-                <p class="head"><span>코딩</span><span>2020.06.02</span></p>
-                <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
-              </div>
-            </div>
-            <div class="content-item">
-              <div class="image">이미지</div>
-              <div class="information">
-                <p class="head"><span>코딩</span><span>2020.06.02</span></p>
-                <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
-              </div>
-            </div>
-            <div class="content-item">
-              <div class="image">이미지</div>
-              <div class="information">
-                <p class="head"><span>코딩</span><span>2020.06.02</span></p>
-                <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
-              </div>
-            </div>
-            <div class="content-item">
-              <div class="image">이미지</div>
-              <div class="information">
-                <p class="head"><span>코딩</span><span>2020.06.02</span></p>
-                <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
-              </div>
-            </div>
-            <div class="content-item">
-              <div class="image">이미지</div>
-              <div class="information">
-                <p class="head"><span>코딩</span><span>2020.06.02</span></p>
-                <p class="title">빅데이터 엔지니어 첫걸음<br />데이터 전처리/가공/모델링 개념</p>
-                <p class="author">코딩덕후님 작성</p>
+                <p class="author"><i>Y</i><span>코딩덕후</span>님 작성</p>
               </div>
             </div>
           </div>
@@ -102,7 +62,7 @@ main {
   section {
     &.left-section {
       flex-basis: 60%;
-      height: 1000px;
+      // height: 1000px;
       border-right: 1px solid $oc-gray-1;
 
       div.wrap {
@@ -161,6 +121,7 @@ main {
             margin-bottom: 20px;
             border: 1px solid $oc-gray-1;
             box-sizing: border-box;
+            cursor: pointer;
 
             &:nth-child(even) {
               margin-left: 20px;
@@ -168,20 +129,58 @@ main {
 
             > div.image {
               height: 200px;
-              background-color: $oc-blue-6;
+              background-color: $oc-blue-5;
             }
 
             > div.information {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
               height: 150px;
+              padding: 20px;
+              box-sizing: border-box;
 
               > p.head {
-                span:first-child {
-                  padding: 20px;
-                  background-color: $oc-orange-5;
-                  box-sizing: border-box;
+                // margin-bottom: 15px;
+
+                span {
+                  display: inline-block;
+
+                  &:first-child {
+                    padding: 2px 15px;
+                    border-radius: 10px;
+                    background-color: $oc-orange-5;
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: $oc-white;
+                  }
+
+                  &:last-child {
+                    margin-left: 10px;
+                    font-weight: 600;
+                    font-size: 11px;
+                  }
+                }
+              }
+
+              > p.title {
+                font-weight: 600;
+                font-size: 20px;
+              }
+
+              > p.author {
+                font-weight: 500;
+                font-size: 12px;
+                color: $oc-gray-5;
+
+                > i {
+                  margin-right: 5px;
+                  font-style: normal;
                 }
 
-                span:last-child {
+                > span {
+                  font-weight: 600;
+                  color: $oc-gray-8;
                 }
               }
             }
